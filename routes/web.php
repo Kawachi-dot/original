@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+//Account
+Route::get('/account/info',[AccountController::class, 'account_info']);
+Route::get('/account/create',[AccountController::class, 'account_create']);
+Route::post('/account/confirm',[AccountController::class, 'account_confirm']);
+Route::post('/account/register',[AccountController::class, 'account_register']);
+Route::get('/account/edit/{id}',[AccountController::class, 'account_edit']);
+Route::post('/account/update/{id}',[AccountController::class, 'account_update']);
+//Money
+Route::get('/money/list',[AccountController::class, 'money_list']);
+Route::get('/money/add',[AccountController::class, 'money_add']);
+Route::post('/money/add/complete',[AccountController::class, 'money_add_complete']);
+Route::get('/money/edit/{id}',[AccountController::class, 'money_edit']);
+Route::post('/money/update/{id}',[AccountController::class, 'money_update']);
+Route::post('/money/delete/{id}',[AccountController::class, 'money_delete']);
+//Plan
+Route::get('/plan/list',[AccountController::class, 'plan_list']);
+Route::get('/plan/create',[AccountController::class, 'plan_create']);
+Route::post('/plan/create/complete',[AccountController::class, 'plan_create_complete']);
+Route::get('/plan/edit/{id}',[AccountController::class, 'plan_edit']);
+Route::post('/plan/update/{id}',[AccountController::class, 'plan_update']);
+//graph
+Route::get('/graph',[AccountController::class, 'graph']);
