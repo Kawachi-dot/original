@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>更新しました！</h1>
-    <a href=''><input type='button' value='一覧へ戻る'></a>
+    <a href='/money/list'><input type='button' value='一覧へ戻る'></a>
 </body>
 </html>

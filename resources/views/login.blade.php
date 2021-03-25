@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン画面</title>
+    <link href="{{asset('css/login.css')}}" rel="stylesheet" type='text/css'>    
 </head>
 <body>
-    <p>ID:<input type='text'></p>
-    <p>パスワード:<input type='text'></p>
-    <input type='submit' value='ログイン'>
+
+<div class='container'>
+    <h1>マイページログイン</h1>
+    <form class='form' action='/money/list' method='post'>
+       <p>ID:<input type='text'></p>
+       <p>パスワード:<input type='password'></p>
+       <input id='login-button' type='submit' value='ログイン'>
+    </form>
+    <a href='/account/create'>新規作成</a>
+</div>    
+
 </body>
 </html>

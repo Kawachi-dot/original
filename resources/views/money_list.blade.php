@@ -7,7 +7,7 @@
     <title>家計簿リスト</title>
 </head>
 <body>
-    <table border=1>
+    <table border='1'>
        <tr>
          <th>月</th>
          <th>日</th>
@@ -17,31 +17,33 @@
          <th></th>
          <th></th>
        </tr>
-       @foreach
+       @foreach($money as $minimoney)
        <tr>
-          <th>{{$money->month}}</th>
-          <th>{{$money->day}}</th>'
+          <th>{{$minimoney->month}}</th>
+          <th>{{$minimoney->day}}</th>
           <th>
-          @if({{$money->usage_id}}==1)
+          <!--
+          if($minimoney->usage_id==1){
             光熱費
-        　@elseif({{$money->usage_id}}==2)
+          }elseif($minimoney->usage_id==2){
             食費
-          @elseif({{$money->usage_id}}==3)  
+          }elseif($minimoney->usage_id==3){  
             住宅費
-          @elseif({{$money->usage_id}}==4)  
+          }elseif($minimoney->usage_id==4){  
             日用品費
-          @elseif({{$money->usage_id}}==5)  
+          }elseif($minimoney->usage_id==5){  
             交通費
-          @elseif({{$money->usage_id}}==6)  
+          }elseif($minimoney->usage_id==6){  
             医療費
-          @elseif({{$money->usage_id}}==7)  
+          }elseif($minimoney->usage_id==7){  
             その他
-          @endif  
+          }
+          ?> -->
           </th>
-          <th>{{$money->money}}</th>
-          <th>{{$money->comment}}</th>
-          <th><a href='/edit/{{$money->money_id}}'><input type='button' value='編集'></a></th>
-          <th><form action="/delete/{{$money->money_id}}" method='post'>{{csrf_field()}}<input type='submit' value='削除' onclick="return check();"></form></th>
+          <th>{{$minimoney->money}}</th>
+          <th>{{$minimoney->comment}}</th>
+          <th><a href='/edit/{{$minimoney->money_id}}'><input type='button' value='編集'></a></th>
+          <th><form action="/delete/{{$minimoney->money_id}}" method='post'>{{csrf_field()}}<input type='submit' value='削除' onclick="return check();"></form></th>
        <tr>
        @endforeach
   
@@ -55,6 +57,6 @@
   　　　}
   　　　</script>      
     </table>
-    <a href=''><input type='button' value='追加する'></a>
+    <a href='/money/add'><input type='button' value='追加する'></a>
 </body>
 </html>

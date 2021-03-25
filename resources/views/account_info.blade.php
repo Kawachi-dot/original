@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>アカウント情報</h1>
+    
     <p>ID:<input type='text' value='{{$account->code}}'></p>
     <p>ニックネーム:<input type='text' value='{{$account->name}}'></p>
     <p>パスワード:<input type='text' value='{{$account->password}}'></p>
-    <a href=''><input type='button' value='変更する'></a>
+    <a href='/account/edit'><input type='button' value='変更する'></a>
 </body>
 </html>
