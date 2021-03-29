@@ -10,7 +10,7 @@ use App\Models\Plan;
 class AccountController extends Controller
 {
     public function login(){
-        return view('login');
+        return view('auth/login');
     }
     
     public function logout(){
@@ -59,6 +59,7 @@ class AccountController extends Controller
     //Money
     public function money_list(){
         $money=Money::all();
+        dd($money);
         return view('money_list', compact('money'));
     }
     public function money_add(){
@@ -75,8 +76,9 @@ class AccountController extends Controller
         return view('money_add_complete');
     }
     public function money_edit($money_id){
-        $money_edit=Money::find($money_id);
-        return view('money_edit');
+        $money=Money::find($money_id);
+        
+        return view('money_edit',compact('money'));
     }
     public function money_update(Request $request,$money_id){
         $money_update=Money::find($money_id);
@@ -96,8 +98,8 @@ class AccountController extends Controller
 
     //Plan
     public function plan_list(){
-        $plans=Plan::all();
-        return view('plan_list',compact('plan'));
+        $plans=Plan::where('id',1)->first();
+        return view('plan_list',compact('plans'));
     }
     public function plan_create(){
         return view('plan_create');
@@ -118,7 +120,7 @@ class AccountController extends Controller
     
     public function plan_edit($plan_id){
         $plan_edit=Plan::find($plan_id);
-        return view('plan_edit');
+        return view('plan_edit',compact('plan_edit'));
     }
     
     public function plan_update(Request $request,$plan_id){

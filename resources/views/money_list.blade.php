@@ -22,28 +22,28 @@
           <th>{{$minimoney->month}}</th>
           <th>{{$minimoney->day}}</th>
           <th>
-          <!--
+          @php
           if($minimoney->usage_id==1){
-            光熱費
+            print('光熱費');
           }elseif($minimoney->usage_id==2){
-            食費
+            print('食費');
           }elseif($minimoney->usage_id==3){  
-            住宅費
+            print('住宅費');
           }elseif($minimoney->usage_id==4){  
-            日用品費
+            print('日用品費');
           }elseif($minimoney->usage_id==5){  
-            交通費
+            print('交通費');
           }elseif($minimoney->usage_id==6){  
-            医療費
+            print('医療費');
           }elseif($minimoney->usage_id==7){  
-            その他
+            print('その他');
           }
-          ?> -->
+          @endphp
           </th>
           <th>{{$minimoney->money}}</th>
           <th>{{$minimoney->comment}}</th>
-          <th><a href='/edit/{{$minimoney->money_id}}'><input type='button' value='編集'></a></th>
-          <th><form action="/delete/{{$minimoney->money_id}}" method='post'>{{csrf_field()}}<input type='submit' value='削除' onclick="return check();"></form></th>
+          <th><a href="/money/edit/{{$minimoney->money_id}}"><input type='button' value='編集'></a></th>
+          <th><form action="/money/delete/{{$minimoney->money_id}}" method='post'>{{csrf_field()}}<input type='submit' value='削除' onclick="return check();"></form></th>
        <tr>
        @endforeach
   

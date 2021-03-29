@@ -6,7 +6,7 @@
     <link href="{{asset('css/login.css')}}" rel="stylesheet" type='text/css'>    
 </head>
 <body>
-
+<h1>家計簿管理アプリ</h1>
 <div class='container'>
     <h1>マイページログイン</h1>
     <form class='form' action='/money/list' method='post'>

@@ -9,14 +9,14 @@
 <body>
 <form action='/plan/create/complete' method='post'>
 {{csrf_field()}}
-    <p>光熱費：<input type='text' name='utility'></p>
-    <p>食費：<input type='text' name='food'></p>
-    <p>住宅費：<input type='text' name='housing'></p>
-    <p>日用品費：<input type='text' name='daily_necessity'></p>
-    <p>交通費；<input type='text' name='transport'></p>
-    <p>医療費：<input type='text' name='medical'></p>
-    <p>その他：<input type='text' name='other'></p>
-    <a href='/plan/list'><input type='text' value='戻る'></a>
+    <p>光熱費：<input type='text' name='utility'>円</p>
+    <p>食費：<input type='text' name='food'>円</p>
+    <p>住宅費：<input type='text' name='housing'>円</p>
+    <p>日用品費：<input type='text' name='daily_necessity'>円</p>
+    <p>交通費；<input type='text' name='transport'>円</p>
+    <p>医療費：<input type='text' name='medical'>円</p>
+    <p>その他：<input type='text' name='other'>円</p>
+    <a href='/plan/list'><input type='button' value='戻る'></a>
     <input type='submit' value='作成'>
 </form>
 </body>

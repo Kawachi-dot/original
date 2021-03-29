@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>家計簿編集画面</title>
 </head>
 <body>
-<form action='/money/update/{{$money_edit->money_id}}' method='post'>
+<form action='/money/update/{{$money->money_id}}' method='post'>
 {{csrf_field()}}
     <input type='hidden' value='{{$money->money_id}}'>
     <p>日付：<input type='text' name='month' value='{{$money->month}}'>/<input type='text' name='day' value='{{$money->day}}'></p>
