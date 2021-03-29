@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Account;
 use App\Models\Money;
 use App\Models\Plan;
@@ -13,9 +14,7 @@ class AccountController extends Controller
         return view('auth/login');
     }
     
-    public function logout(){
-        return view('logout');
-    }
+    
     
     
     //Account
@@ -59,8 +58,15 @@ class AccountController extends Controller
     //Money
     public function money_list(){
         $money=Money::all();
-        dd($money);
-        return view('money_list', compact('money'));
+        /*if(Auth::check()){
+            //ログイン済みであれば家計簿リストの表示
+            return view('money_list',compact('money'));
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
+        */
+        return view('money_list',compact('money'));
     }
     public function money_add(){
         return view('money_add');

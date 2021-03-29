@@ -7,6 +7,16 @@
     <title>アカウント情報</title>
 </head>
 <body>
+<h1>家計簿管理アプリ</h1>
+<input type='submit' name='logout' value='ログアウト'>
+<div id='nav'>
+   <ul>
+       <li><a href='/money/list'>今月の家計簿</a></li>
+       <li><a href='/plan/list'>マイプラン</a></li>
+       <li><a href='/graph'>月ごとのグラフ</a></li>
+       <li><a href='/account/info'>設定</a></li>
+   </ul>    
+</div>
     <h1>アカウント情報</h1>
     
     <p>ID:<input type='text' value='{{$account->code}}'></p>
