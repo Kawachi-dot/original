@@ -22,13 +22,27 @@
 
 <div id='nav'>
    <ul>
-       <li><a href='/money/list'>今月の家計簿</a></li>
-       <li><a href='/plan/list'>マイプラン</a></li>
-       <li><a href='/graph'>月ごとのグラフ</a></li>
-       <li><a href='/account/info'>設定</a></li>
+       <li><a href="/money/list">今月の家計簿</a></li>
+       <li><a href="/plan/list">マイプラン</a></li>
+       <li><a href="/graph">月ごとのグラフ</a></li>
+       <li><a href="/account/info">設定</a></li>
    </ul>    
 </div>
 
+<div id="money">
+  <h1>今月の合計金額：
+  @php
+  $sum=0;
+  foreach($money as $minimoney){
+    $sum+=$minimoney->money;
+  }
+    print($sum);
+  @endphp
+  円
+  </h1>
+
+</div>
+<div id='table'>
     <table border='1'>
        <tr>
          <th>月</th>
@@ -79,6 +93,7 @@
   　　　}
   　　　</script>      
     </table>
+</div>    
     <a class='bt add' href='/money/add'>追加する</a>
 </body>
 </html>

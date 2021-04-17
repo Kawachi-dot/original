@@ -94,6 +94,7 @@ class AccountController extends Controller
         $money_update->money=$request->money;
         $money_update->comment=$request->comment;
         $money_update->save();
+        //dd($money_update);
         return view('money_update');
     }
     public function money_delete(Request $request){
