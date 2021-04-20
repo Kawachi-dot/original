@@ -22,7 +22,7 @@
 
 <div id='nav'>
    <ul>
-       <li><a href="/money/list">今月の家計簿</a></li>
+       <li><a href='/money/list'>今月の家計簿</a></li>
        <li><a href="/plan/list">マイプラン</a></li>
        <li><a href="/graph">月ごとのグラフ</a></li>
        <li><a href="/account/info">設定</a></li>

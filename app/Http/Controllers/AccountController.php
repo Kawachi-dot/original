@@ -22,7 +22,7 @@ class AccountController extends Controller
         $accounts=Account::all();
         return view('account_info',compact('account'));
     }
-
+/*
     public function account_create(){
         return view('account_create');
     }
@@ -52,7 +52,7 @@ class AccountController extends Controller
         $account_update->password=$request->password;
         $account_update->save();
         return view('account_update');
-    }
+    }*/
     
     
     //Money
@@ -105,7 +105,7 @@ class AccountController extends Controller
 
     //Plan
     public function plan_list(){
-        $plans=Plan::where('id',1)->first();
+        $plans=Plan::find(1);
         return view('plan_list',compact('plans'));
     }
     public function plan_create(){
@@ -126,12 +126,12 @@ class AccountController extends Controller
     }
     
     public function plan_edit($plan_id){
-        $plan_edit=Plan::find($plan_id);
+        $plan_edit=Plan::find(1);
         return view('plan_edit',compact('plan_edit'));
     }
     
     public function plan_update(Request $request,$plan_id){
-        $plan=Plan::find($plan_id);
+        $plan=Plan::find(1);
         $plan->utility=$request->utility;
         $plan->food=$request->food;
         $plan->housing=$request->housing;
