@@ -42,11 +42,20 @@
   @endphp
   円
   </h1>
-
+<script>
+ new Vue ({
+            el: '#app',
+            data: {
+                year: '',
+                month: '',
+                chart: null
+          });
+  </script>            
 </div>
 <div id='table'>
     <table border='1'>
        <tr>
+         <th>年</th>
          <th>月</th>
          <th>日</th>
          <th>項目</th>
@@ -57,6 +66,7 @@
        </tr>
        @foreach($money as $minimoney)
        <tr>
+       　 <th>{{$minimoney->year}}</th>
           <th>{{$minimoney->month}}</th>
           <th>{{$minimoney->day}}</th>
           <th>

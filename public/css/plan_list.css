@@ -42,7 +42,21 @@ h1{
  /*--------contents----------*/
  a#new{
      margin-top: 5%;
-     margin-left: 40%;
+     margin-left: 43%;
      text-align: center;
      font-size: xx-large;
+ }
+
+ h1#purpose{
+     color:red;
+     margin-left:33%;
+ }
+
+ div#item{
+     margin-left:40%;
+     font-size: larger;
+ }
+
+ a#button{
+     margin-left: 45%;
  }

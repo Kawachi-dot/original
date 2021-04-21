@@ -33,16 +33,18 @@
     <a id='new' href='/plan/create'>新規作成</a>
 
 @else       
-    <h1>目標金額:{{$plans->utility+$plans->food+$plans->housing+$plans->daily_necessity+$plans->transport+$plans->medical+$plans->other}}円
+    <h1 id='purpose'>目標金額:{{$plans->utility+$plans->food+$plans->housing+$plans->daily_necessity+$plans->transport+$plans->medical+$plans->other}}円
     </h1>
-    <p>光熱費：{{$plans->utility}}円</p>
-    <p>食費：{{$plans->food}}円</p>
-    <p>住宅費：{{$plans->housing}}円</p>
-    <p>日用品費：{{$plans->daily_necessity}}円</p>
-    <p>交通費：{{$plans->transport}}円</p>
-    <p>医療費：{{$plans->medical}}円</p>
-    <p>その他：{{$plans->other}}円</p>
-    <a href='/plan/edit/{{$plans->plan_id}}'><input type='button' value='変更する'></a>
+    <div id='item'>
+        <p>光熱費：{{$plans->utility}}円</p>
+        <p>食費：{{$plans->food}}円</p>
+        <p>住宅費：{{$plans->housing}}円</p>
+        <p>日用品費：{{$plans->daily_necessity}}円</p>
+        <p>交通費：{{$plans->transport}}円</p>
+        <p>医療費：{{$plans->medical}}円</p>
+        <p>その他：{{$plans->other}}円</p>
+    </div>
+    <a id='button' href='/plan/edit/{{$plans->plan_id}}'><input type='button' value='変更する'></a>
         
 @endif
 </body>

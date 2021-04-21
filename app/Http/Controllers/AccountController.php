@@ -7,22 +7,21 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Account;
 use App\Models\Money;
 use App\Models\Plan;
+use App\Models\User;
 
 class AccountController extends Controller
-{
+{   //Login
     public function login(){
         return view('auth/login');
     }
     
     
-    
-    
     //Account
-    public function account_info(){
-        $accounts=Account::all();
-        return view('account_info',compact('account'));
+    /*public function account_info(){
+        $accounts=User::all();
+        return view('account_info',compact('accounts'));
     }
-/*
+
     public function account_create(){
         return view('account_create');
     }
@@ -58,21 +57,29 @@ class AccountController extends Controller
     //Money
     public function money_list(){
         $money=Money::all();
-        /*if(Auth::check()){
-            //ログイン済みであれば家計簿リストの表示
+        if(Auth::check()){
+            //ログイン済みの表示
             return view('money_list',compact('money'));
         }else{
             //ログインしていなかったらログイン画面を表示
             return view('auth/login');
         }
-        */
-        return view('money_list',compact('money'));
+        
+        //return view('money_list',compact('money'));
     }
     public function money_add(){
-        return view('money_add');
+        if(Auth::check()){
+            //ログイン済みの表示
+            return view('money_add');
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
+        
     }
     public function money_add_complete(Request $request){
         $money=new Money;
+        $money->year=$request->year;
         $money->month=$request->month;
         $money->day=$request->day;
         $money->usage_id=$request->usage_id;
@@ -83,8 +90,16 @@ class AccountController extends Controller
     }
     public function money_edit($money_id){
         $money=Money::find($money_id);
+        if(Auth::check()){
+            //ログイン済みの表示
+            return view('money_edit',compact('money'));
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
         
-        return view('money_edit',compact('money'));
+        
+    
     }
     public function money_update(Request $request,$money_id){
         $money_update=Money::find($money_id);
@@ -106,10 +121,25 @@ class AccountController extends Controller
     //Plan
     public function plan_list(){
         $plans=Plan::find(1);
-        return view('plan_list',compact('plans'));
+        if(Auth::check()){
+            //ログイン済みの表示
+            return view('plan_list',compact('plans'));
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
+        
+        
     }
     public function plan_create(){
-        return view('plan_create');
+        if(Auth::check()){
+            //ログイン済みの表示
+            return view('plan_create');
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
+        
     }
     
     public function plan_create_complete(Request $request){
@@ -121,14 +151,21 @@ class AccountController extends Controller
         $plan->transport=$request->transport;
         $plan->medical=$request->medical;
         $plan->other=$request->other;
-        dd($plan);
-        //$plan->save();
+        $plan->save();
         return view('plan_create_complete');
     }
     
     public function plan_edit($plan_id){
         $plan_edit=Plan::find(1);
-        return view('plan_edit',compact('plan_edit'));
+        if(Auth::check()){
+            //ログイン済みの表示
+            return view('plan_edit',compact('plan_edit'));
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
+        
+        
     }
     
     public function plan_update(Request $request,$plan_id){
@@ -146,7 +183,17 @@ class AccountController extends Controller
     
     //Graph
     public function graph(){
-        return view('graph');
+        $plan = Plan::find(1);
+        $money = Money::all();
+        if(Auth::check()){
+            //ログイン済みの表示
+            return view('graph',compact('plan','money'));
+        }else{
+            //ログインしていなかったらログイン画面を表示
+            return view('auth/login');
+        }
+
+        
     }
     
 }

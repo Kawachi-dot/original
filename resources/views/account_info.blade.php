@@ -19,9 +19,9 @@
 </div>
     <h1>アカウント情報</h1>
     
-    <p>ID:<input type='text' value='{{$account->code}}'></p>
-    <p>ニックネーム:<input type='text' value='{{$account->name}}'></p>
-    <p>パスワード:<input type='text' value='{{$account->password}}'></p>
-    <a href='/account/edit'><input type='button' value='変更する'></a>
+    <p>名前：<input type='text' value='{{$accounts->name}}'></p>
+    <p>e-mail:<input type='text' value='{{$accounts->email}}'></p>
+    <p>パスワード:<input type='text' value='{{$accounts->password}}'></p>
+    <!--a href='/account/edit'><input type='button' value='変更する'></a-->
 </body>
 </html>

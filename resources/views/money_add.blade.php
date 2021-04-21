@@ -31,6 +31,7 @@
 </div>
 <form action='/money/add/complete' method='post'>
 {{csrf_field()}}
+    <p>年：<input type='text' name='year'></p>
     <p>日付：<input type='text' name='month'>/<input type='text' name='day'></p>
     <p>項目：
        <input type='radio' name='usage_id' value=1>光熱費
