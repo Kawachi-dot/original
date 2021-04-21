@@ -121,7 +121,8 @@ class AccountController extends Controller
         $plan->transport=$request->transport;
         $plan->medical=$request->medical;
         $plan->other=$request->other;
-        $plan->save();
+        dd($plan);
+        //$plan->save();
         return view('plan_create_complete');
     }
     

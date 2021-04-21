@@ -41,6 +41,7 @@ Route::post('/plan/update/{plan_id}',[AccountController::class, 'plan_update']);
 //graph
 Route::get('/graph',[AccountController::class, 'graph']);
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -19,7 +19,7 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
- <!--               -- Teams Dropdown --
+ <!--               -- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
                         <x-jet-dropdown align="right" width="60">
@@ -42,7 +42,7 @@
                                         {{ __('Manage Team') }}
                                     </div>
 
-                                    -- Team Settings --
+                                    <!-- Team Settings -->
                                     <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
                                     </x-jet-dropdown-link>
