@@ -7,7 +7,7 @@
     <title>アカウント編集画面</title>
 </head>
 <body>
-<form action='' method='post'>
+<form action='/accouht/update/{{$account_edit->account_id}}' method='post'>
 {{csrf_field()}}
     <p>ID:<input type='text' name='code' value='{{$account_edit->code}}'></p>
     <p>ニックネーム:<input type='text' name='name' value='{{$account_edit->name}}'></p>

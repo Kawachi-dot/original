@@ -7,12 +7,12 @@
     <title>アカウント作成画面</title>
 </head>
 <body>
-<form action='' method='post'>
+<form action='/account/confirm' method='post'>
 {{csrf_field()}}
     <p>ID:<input type='text' name='code'></p>
     <p>ニックネーム:<input type='text' name='name'></p>
     <p>パスワード:<input type='text' name='password'></p>
-    <input type='submit' value='新規作成'> 
+    <input type='submit' value='確認画面へ'> 
 </form>
 </body>
 </html>

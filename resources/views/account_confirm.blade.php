@@ -7,6 +7,12 @@
     <title>アカウント作成確認画面</title>
 </head>
 <body>
-    
+<form action='/account/register' method='post'>
+{{csrf_field()}}
+    <p>ID:{{$}}</p>
+    <p>ニックネーム:{{$}}</p>
+    <p>パスワード:{{$}}</p>
+    <input type='submit' value='新規作成'> 
+</form>
 </body>
 </html>

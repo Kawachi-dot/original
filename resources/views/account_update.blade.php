@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>アカウントの変更が完了しました！</h1>
-    <a href=''><input type='button' value='設定画面に戻る'></a>
+    <a href='/account/info'><input type='button' value='設定画面に戻る'></a>
 </body>
 </html>
