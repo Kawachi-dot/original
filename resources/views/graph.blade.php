@@ -29,10 +29,9 @@
        <li><a href='/account/info'>設定</a></li>
    </ul>    
 </div>
-
+<!--
 <div id="app">
         <div>
-            集計：
             <span v-text="year"></span>年
             <span v-text="month"></span>月
             <button type="button" @click="moveMonth(-1)">前へ</button>
@@ -128,6 +127,6 @@
 
             }
         });
-   </script>
+   </script>  -->
 </body>
 </html>
