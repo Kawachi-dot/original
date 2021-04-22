@@ -42,15 +42,7 @@
   @endphp
   円
   </h1>
-<script>
- new Vue ({
-            el: '#app',
-            data: {
-                year: '',
-                month: '',
-                chart: null
-          });
-  </script>            
+             
 </div>
 <div id='table'>
     <table border='1'>

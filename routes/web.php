@@ -19,12 +19,12 @@ Route::get('/', function () {
 });
 Route::get('/login',[AccountController::class,'login']);
 //Account
-Route::get('/account/info',[AccountController::class, 'account_info']);
+/*Route::get('/account/info',[AccountController::class, 'account_info']);
 Route::get('/account/create',[AccountController::class, 'account_create']);
 Route::post('/account/confirm',[AccountController::class, 'account_confirm']);
 Route::post('/account/register',[AccountController::class, 'account_register']);
 Route::get('/account/edit/{account_id}',[AccountController::class, 'account_edit']);
-Route::post('/account/update/{account_id}',[AccountController::class, 'account_update']);
+Route::post('/account/update/{account_id}',[AccountController::class, 'account_update']);*/
 //Money
 Route::get('/money/list',[AccountController::class, 'money_list']);
 Route::get('/money/add',[AccountController::class, 'money_add']);
